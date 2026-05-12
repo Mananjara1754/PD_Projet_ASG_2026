@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC-3 Algorithm Visualizer</title>
+    <meta name="description" content="Visualisation interactive de l'algorithme AC-3 pour la consistance d'arcs.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>AC-3 Visualizer</h1>
+            <p>Visualisation de la Consistance d'Arcs - Exercice 1</p>
+        </header>
+
+        <main>
+            <div id="graph-container">
+                <div id="cy"></div>
+                <div id="queue-overlay" class="glass-panel">
+                    <h3>File Q</h3>
+                    <div id="queue-list"></div>
+                </div>
+            </div>
+
+            <aside id="sidebar">
+                <div class="glass-panel" id="controls">
+                    <h3>Contrôles</h3>
+                    <div class="button-group">
+                        <button id="btn-reset" title="Réinitialiser">↺</button>
+                        <button id="btn-prev" title="Précédent">←</button>
+                        <button id="btn-play" title="Lecture/Pause">▶</button>
+                        <button id="btn-next" title="Suivant">→</button>
+                    </div>
+                    <div id="step-counter">Étape: 0 / 0</div>
+                </div>
+
+                <div class="glass-panel" id="domains">
+                    <h3>Domaines</h3>
+                    <div id="domain-list">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+
+                <div class="glass-panel" id="log-panel">
+                    <h3>Journal</h3>
+                    <div id="logs"></div>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>PPC - Projet ASG 2026 | Visualisation AC-3</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
