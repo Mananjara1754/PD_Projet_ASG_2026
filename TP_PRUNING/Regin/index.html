@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllDifferent - Algorithme de Régin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Filtrage AllDifferent</h1>
+            <p>Algorithme de Régin - Couplage, Graphe de Résidu et SCC</p>
+        </header>
+
+        <main>
+            <div id="graph-container">
+                <div id="cy"></div>
+                <div id="legend" class="glass-panel">
+                    <div class="legend-item"><span class="box var"></span> Variable</div>
+                    <div class="legend-item"><span class="box val"></span> Valeur</div>
+                    <div class="legend-item"><span class="line match"></span> Couplage</div>
+                </div>
+            </div>
+
+            <aside id="sidebar">
+                <div class="glass-panel" id="controls">
+                    <h3>Contrôles</h3>
+                    <div class="button-group">
+                        <button id="btn-reset" title="Réinitialiser">↺</button>
+                        <button id="btn-prev" title="Précédent">←</button>
+                        <button id="btn-play" title="Lecture/Pause">▶</button>
+                        <button id="btn-next" title="Suivant">→</button>
+                    </div>
+                    <div id="step-counter">Étape: 0 / 0</div>
+                    <div id="step-title" style="margin-top: 10px; font-weight: 600; color: var(--accent-secondary);"></div>
+                </div>
+
+                <div class="glass-panel" id="results">
+                    <h3>Comparatif des Domaines</h3>
+                    <table id="domain-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Avant</th>
+                                <th>Après</th>
+                            </tr>
+                        </thead>
+                        <tbody id="domain-body">
+                            <!-- Dynamic -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="glass-panel" id="log-panel">
+                    <h3>Journal de l'algorithme</h3>
+                    <div id="logs"></div>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>PPC - Projet ASG 2026 | Filtrage Global AllDifferent</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
